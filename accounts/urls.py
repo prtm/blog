@@ -11,4 +11,10 @@ urlpatterns = [
         redirect_authenticated_user=True), name='login'),
     path('logout/', LogoutView.as_view(next_page=reverse_lazy('accounts:login')), name='logout'),
     path('register/', register, name='register'),
+
+    path('password_change/',
+        PasswordChangeView.as_view(template_name='accounts/password_change_form.html'),
+        name='password_change'),
+        
+    
 ]
