@@ -14,6 +14,13 @@
             </a>
         </div>
         <div class="col-md-5 primary-back">
+            <h4 class="text-primary text-center mt-15">
+                
+                {% block auth_heading %}
+                    
+                {% endblock auth_heading %}
+                    
+            </h4>
             {% block auth %} {% endblock auth %}
         </div>
 
