@@ -1,0 +1,31 @@
+{% extends 'accounts/auth.html' %} {% block title %}Registration | Preetam{% endblock title %} {% block heading %} Registration {% endblock heading %}
+{% block auth %}
+
+<h4 class="text-primary text-center mt-15">New User!</h4>
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+
+  {% for hidden_field in form.hidden_fields %}
+    {{ hidden_field.errors }}
+    {{ hidden_field }}
+  {% endfor %}
+
+  {% for field in form %}
+  <div class="form-group">
+      {{ field.errors }} {{ field.label_tag }} {{ field }}
+      {% if field.help_text %}
+      <p class="help">{{ field.help_text|safe }}</p>
+      {% endif %}
+  </div>
+  {% endfor %}
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            <a href="{% url 'accounts:login' %}">Already have a account?</a>
+        </div>
+    </div>
+    <button style="margin-top: 25px;" type="submit" class="btn btn-primary">Submit</button>
+    <input type="hidden" name="next" value="{{ next }}" />
+</form>
+
+{% endblock auth %}
