@@ -1,0 +1,155 @@
+/* #232322 background */
+
+/* #42464b login cover */
+
+/* ##20898f primary color */
+
+/* #54575d secondary background */
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    padding: 60px 30px 60px 30px;
+    background-color: #f6f8f9 !important;
+}
+
+.white-back {
+    background-color: white;
+    border-top-left-radius: .30rem;
+    border-bottom-left-radius: .30rem;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+}
+
+.primary-back {
+    background-color: #fafafa;
+    border-top-right-radius: .30rem;
+    border-bottom-right-radius: .30rem;
+    box-shadow: .5rem .5rem 1rem rgba(0, 0, 0, .15) !important;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, .5)
+}
+
+.bg-img {
+    background-image: url("../images/code.jpg");
+    background-color: #111;
+    height: auto;
+    min-height: 40%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.bg-img a:hover {
+    cursor: auto;
+}
+
+a {
+    color: #727272;
+}
+
+a:hover {
+    color: #262626;
+}
+
+.btn-primary:hover {
+    background-color: #111;
+    border-color: #040404;
+}
+
+.btn-primary {
+    background-color: #262626;
+    border-color: #111;
+}
+
+.text-primary {
+    color: #262626 !important;
+}
+
+.white-color {
+    color: white;
+}
+
+.p-15 {
+    padding: 15px;
+}
+
+.p-30 {
+    padding: 30px;
+}
+
+.mt-15 {
+    margin-top: 15px;
+}
+
+.mb-15 {
+    margin-bottom: 15px;
+}
+
+.p0 {
+    padding: 0;
+}
+
+.break {
+    display: inline-block;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    /* max-width: 100%; */
+    border-top: 1px solid rgba(0, 0, 0, .5);
+    padding-bottom:4px;
+    width: 33.3%; 
+}
+
+.d-in-b{
+    display: inline-block;
+}
+
+.fa-facebook-f {
+    color: white;
+}
+
+.fa-google-plus-in {
+    color: white;
+}
+
+.fa-linkedin-in {
+    color: white;
+}
+
+.btn-gplus:hover {
+    color: white;
+    background: #e84234;
+}
+
+.btn-gplus {
+    color: white;
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
+    background: #c73b2f;
+}
+
+.btn-li:hover {
+    color: white;
+    background: #0077b5;
+}
+
+.btn-li {
+    color: white;
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
+    background: #006ca5;
+}
+
+.btn-git:hover {
+    color: white;
+    background: #161516;
+}
+
+.btn-git {
+    color: white;
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
+    background: #080808;
+}

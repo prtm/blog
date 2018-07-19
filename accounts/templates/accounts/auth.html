@@ -1,0 +1,24 @@
+{% extends 'accounts/base.html' %} {% load static %} {% block head %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}"> {% endblock head %} {% block body %}
+<div class="container-fluid h-100">
+    <div class="row h-100 mx-auto d-flex justify-content-center">
+        <div class="col-md-6 white-back bg-img p0">
+            <a href="http://www.bellans.com/blog-1/2017/11/11/we-1">
+                <div class="h-100 w-100 overlay">
+
+                    <div class="text-center" style="padding-top: 15px;">
+                        <strong style="color: white;">
+                            {% block heading %} {% endblock heading %}
+                        </strong>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+        <div class="col-md-5 primary-back">
+            {% block auth %} {% endblock auth %}
+        </div>
+
+    </div>
+</div>
+{% endblock body %}
