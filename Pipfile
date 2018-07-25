@@ -12,6 +12,7 @@ django-widget-tweaks = "*"
 pylint = "*"
 "autopep8" = "*"
 django-seed = "*"
+faker = "*"
 
 [requires]
 python_version = "3.6"
