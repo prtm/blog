@@ -2,7 +2,7 @@
 secrets.json
 local.py
 prod.py
-
+create_fake_data.py
 # Created by https://www.gitignore.io/api/django,python
 
 ### Django ###
