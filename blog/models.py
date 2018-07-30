@@ -5,32 +5,19 @@ from django.utils.timezone import now
 
 
 # third party
+from model_utils.models import TimeStampedModel, StatusModel
+from model_utils import Choices
 from taggit.managers import TaggableManager
 
 
 # Create your models here.
-class TimeStampModel(models.Model):
-    created = models.DateTimeField(auto_now_add=True)
-    modified = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        abstract = True
-
 
 class PublishedManager(models.Manager):
     def get_queryset(self):
         return super(PublishedManager, self).get_queryset().filter(status=Post.PUBLISHED)
 
 
-class Post(TimeStampModel):
-    DRAFT = 'dr'
-    STAGING = 'st'
-    PUBLISHED = 'pu'
-    status_choices = (
-        (DRAFT, 'Draft'),
-        (STAGING, 'Staging'),
-        (PUBLISHED, 'Published')
-    )
+class Post(TimeStampedModel, StatusModel):
 
     author = models.ForeignKey(
         User, related_name='posts', on_delete=models.CASCADE)
@@ -40,10 +27,9 @@ class Post(TimeStampModel):
     body = models.TextField()
     publish = models.DateTimeField(default=now)
     objects = models.Manager()
+    STATUS = Choices('Draft', 'Staging', 'Published')
     published = PublishedManager()
     tags = TaggableManager()
-    status = models.CharField(
-        max_length=2, choices=status_choices, default=DRAFT)
 
     def get_absolute_url(self):
         return reverse('blog:post_detail',
