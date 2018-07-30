@@ -9,12 +9,14 @@ python-decouple = "*"
 django-widget-tweaks = "*"
 pillow = "*"
 django-taggit = "*"
+django-model-utils = "*"
 
 [dev-packages]
 pylint = "*"
 "autopep8" = "*"
 django-seed = "*"
 faker = "*"
+django-extensions = "*"
 
 [requires]
 python_version = "3.6"
