@@ -4,6 +4,10 @@ from django.contrib.auth.models import User
 from django.utils.timezone import now
 
 
+# third party
+from taggit.managers import TaggableManager
+
+
 # Create your models here.
 class TimeStampModel(models.Model):
     created = models.DateTimeField(auto_now_add=True)
@@ -37,6 +41,7 @@ class Post(TimeStampModel):
     publish = models.DateTimeField(default=now)
     objects = models.Manager()
     published = PublishedManager()
+    tags = TaggableManager()
     status = models.CharField(
         max_length=2, choices=status_choices, default=DRAFT)
 
