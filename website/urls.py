@@ -9,6 +9,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(('accounts.urls', 'accounts'), namespace='accounts')),
+    path('', include(('blog.urls', 'blog'), namespace='blog')),
     re_path(r'^$', lambda r: HttpResponseRedirect(reverse('accounts:login'))),
 ]
 

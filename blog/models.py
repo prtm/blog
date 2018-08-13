@@ -2,6 +2,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.timezone import now
+from django.shortcuts import reverse
 
 
 # third party
@@ -14,7 +15,7 @@ from taggit.managers import TaggableManager
 
 class PublishedManager(models.Manager):
     def get_queryset(self):
-        return super(PublishedManager, self).get_queryset().filter(status=Post.PUBLISHED)
+        return super(PublishedManager, self).get_queryset().filter(status=Post.STATUS.published)
 
 
 class Post(TimeStampedModel, StatusModel):
@@ -27,7 +28,7 @@ class Post(TimeStampedModel, StatusModel):
     body = models.TextField()
     publish = models.DateTimeField(default=now)
     objects = models.Manager()
-    STATUS = Choices('Draft', 'Staging', 'Published')
+    STATUS = Choices('draft', 'staging', 'published')
     published = PublishedManager()
     tags = TaggableManager()
 
